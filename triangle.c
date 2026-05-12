@@ -1,0 +1,36 @@
+#include<stdio.h>
+void reception(int *L, int *l)
+{
+    printf("Entrer sa longueur : ");
+    scanf("%d", L);
+
+    printf("Entrer sa base : ");
+    scanf("%d", l);
+}
+
+void fabrication(int *L, int *l)
+{
+    int i, j;
+
+    for(i = 0; i < *l; i++)
+    {
+        for(j = 0; j < *L; j++)
+        {
+            if(i == 0 || i == *l-1 || j == 0 || j == *L-1)
+                printf("* ");
+            else
+                printf("  ");
+        }
+        printf("\n");
+    }
+}
+
+int main(void)
+{
+    int l, L;
+
+    reception(&L, &l);
+    fabrication(&L, &l);
+
+    return 0;
+}
